@@ -29,11 +29,16 @@
 		var $building_id;
 		var $planet_id;
 		
-		var $output_mode;
-		var $quiet;
-		
-		function Buildings()
-		{
+	var $output_mode;
+	var $quiet;
+
+	function __construct()
+	{
+		$this->Buildings();
+	}
+
+	function Buildings()
+	{
 			data::initialize();
 			
 			$this->planet_id = current_planet();

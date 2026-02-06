@@ -30,12 +30,17 @@
 		var $sql;
 		
 		var $building_id;
-		var $planet_id;
-		
-		var $output_mode;
-		
-		function Research_Interface(&$data, &$smarty)
-		{
+	var $planet_id;
+
+	var $output_mode;
+
+	function __construct(&$data, &$smarty)
+	{
+		$this->Research_Interface($data, $smarty);
+	}
+
+	function Research_Interface(&$data, &$smarty)
+	{
 			$this->data = &$data;
 			$this->smarty = &$smarty;
 			$this->sql = new SQL_Generator;
@@ -187,7 +192,7 @@
 			$db_result = $this->sql->execute();
 			if (mysql_num_rows($db_result) == 0)
 				error(__FILE__, __LINE__, 'INVALID_ID', 'No research to cancel.');
-			$task = mysql_fetch_row($db_result, MYSQL_ASSOC);
+			$task = mysql_fetch_array($db_result, MYSQL_ASSOC);
 			
 			$now = microfloat();
 			$percentage = ($task['completion'] - $now) / ($task['completion'] - $task['start']);

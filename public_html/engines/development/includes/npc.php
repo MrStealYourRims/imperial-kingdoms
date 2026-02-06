@@ -10,11 +10,16 @@
 	{
 		var $round_id;
 		var $player_id;
-		var $kingdom_id;
-		var $planet_id;
-		
-		function NPC($round_id, $player_id, $kingdom_id)
-		{
+	var $kingdom_id;
+	var $planet_id;
+
+	function __construct($round_id, $player_id, $kingdom_id)
+	{
+		$this->NPC($round_id, $player_id, $kingdom_id);
+	}
+
+	function NPC($round_id, $player_id, $kingdom_id)
+	{
 			$this->round_id = $round_id;
 			$this->player_id = $player_id;
 			$this->kingdom_id = $kingdom_id;

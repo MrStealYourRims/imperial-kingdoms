@@ -30,11 +30,16 @@
 		var $sql;
 		
 		var $planet_id;
-		var $unit_type;
-		var $unit_id;
-		
-		function Units(&$data, &$smarty)
-		{
+	var $unit_type;
+	var $unit_id;
+
+	function __construct(&$data, &$smarty)
+	{
+		$this->Units($data, $smarty);
+	}
+
+	function Units(&$data, &$smarty)
+	{
 			$this->data = &$data;
 			$this->smarty = &$smarty;
 			$this->sql = new SQL_Generator;

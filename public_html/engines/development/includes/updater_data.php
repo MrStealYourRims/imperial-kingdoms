@@ -28,12 +28,17 @@
 			'users' => array(), 
 		);
 		
-		var $roundindependent = array('buildings', 'concepts', 'armyconcepts', 'navyconcepts', 'weaponconcepts', 'users');
-		
+	var $roundindependent = array('buildings', 'concepts', 'armyconcepts', 'navyconcepts', 'weaponconcepts', 'users');
+
 // } ----------------------------------------------------------------------------- {
-		
-		function Updater_Data()
-		{
+
+	function __construct()
+	{
+		$this->Updater_Data();
+	}
+
+	function Updater_Data()
+	{
 			$this->sql = new SQL_Generator;
 		}
 		

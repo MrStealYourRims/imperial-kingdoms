@@ -9,7 +9,12 @@
 	class alerts
 	{
 		var $alert_change;
-		
+
+		function __construct()
+		{
+			$this->alerts();
+		}
+
 		function alerts()
 		{
 			data::initialize();

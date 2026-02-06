@@ -35,11 +35,16 @@
 		var $sql;
 		
 		var $group_id;
-		var $group_type;
-		var $group_view;
-		
-		function Groups(&$data, &$smarty)
-		{
+	var $group_type;
+	var $group_view;
+
+	function __construct(&$data, &$smarty)
+	{
+		$this->Groups($data, $smarty);
+	}
+
+	function Groups(&$data, &$smarty)
+	{
 			$this->data = &$data;
 			$this->smarty = &$smarty;
 			$this->sql = new SQL_Generator;
@@ -123,7 +128,7 @@
 						$location_result = $this->sql->execute();
 						$location_row = mysql_fetch_array($location_result, MYSQL_ASSOC);
 						
-						$location = strtoupper($value{0}) . '#' . $db_row[$value . '_id'] . ' ' . strshort(htmlentities($location_row['name']), 10);
+						$location = strtoupper($value[0]) . '#' . $db_row[$value . '_id'] . ' ' . strshort(htmlentities($location_row['name']), 10);
 						break;
 					}
 					

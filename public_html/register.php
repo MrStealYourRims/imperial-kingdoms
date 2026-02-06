@@ -34,8 +34,8 @@
 		$password_confirm = $_POST['password_confirm'];
 		$email = $_POST['email'];
 		
-		$preferences['decimal_symbol'] = $_POST['decimal_symbol']{0};
-		$preferences['thousands_seperator'] = $_POST['thousands_seperator']{0};
+		$preferences['decimal_symbol'] = $_POST['decimal_symbol'][0];
+		$preferences['thousands_seperator'] = $_POST['thousands_seperator'][0];
 		$preferences['timezone'] = (int)$_POST['timezone'];
 		$preferences['timestamp_format'] = $_POST['timestamp_format'];
 		

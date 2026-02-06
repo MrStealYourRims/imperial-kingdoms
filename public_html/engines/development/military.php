@@ -123,8 +123,14 @@
 			}
 		}
 		
-		$sort_function = create_function('$a,$b', 'if ($a[\'completion\'] == $b[\'completion\']) return 0; return ($a[\'completion\'] < $b[\'completion\']) ? -1 : 1;');
-		usort($combatlocations, $sort_function);
+		usort(
+			$combatlocations,
+			function ($a, $b)
+			{
+				if ($a['completion'] == $b['completion']) return 0;
+				return ($a['completion'] < $b['completion']) ? -1 : 1;
+			}
+		);
 		
 		
 		

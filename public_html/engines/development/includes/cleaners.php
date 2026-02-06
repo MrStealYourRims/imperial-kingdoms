@@ -13,6 +13,7 @@
 	
 	require_once(dirname(__FILE__) . '/constants.php');
 	require_once(dirname(__FILE__) . '/functions.php');
+	require_once(dirname(dirname(dirname(dirname(__FILE__)))) . '/includes/mysql_compat.php');
 	require_once(dirname(dirname(dirname(dirname(__FILE__)))) . '/includes/sql_generator.php');
 	$sql = new SQL_Generator;
 	
@@ -23,7 +24,7 @@
 	while (($entry = $dir->read()) !== false)
 	{
 		if ($entry === '.' || $entry === '..' || 
-			$entry{0} === '.' || substr($entry, -4) !== '.php')
+			$entry[0] === '.' || substr($entry, -4) !== '.php')
 			continue;
 		
 		$functions[] = substr($entry, 0, -4);
