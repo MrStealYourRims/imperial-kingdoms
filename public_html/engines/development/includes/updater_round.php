@@ -6,11 +6,16 @@
 	class Updater_Round
 	{
 		var $combat;
-		
+
+		function __construct()
+		{
+			$this->Updater_Round();
+		}
+
 		function Updater_Round()
 		{
 			data::initialize();
-			$this->combat = &new Updater_Combat;
+			$this->combat = new Updater_Combat;
 		}
 		
 //   ----------------------------------------------------------------------------- {

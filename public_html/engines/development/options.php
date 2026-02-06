@@ -461,7 +461,7 @@
 					{
 						foreach ($array[$db_row[$type . '_id']] as $value)
 						{
-							$permissions[$value]['name'] = '(' . strtoupper($type{0}) . '#' . $db_row[$type . '_id'] . ') ' . $db_row['name'];
+							$permissions[$value]['name'] = '(' . strtoupper($type[0]) . '#' . $db_row[$type . '_id'] . ') ' . $db_row['name'];
 							
 						}
 					}
@@ -533,8 +533,8 @@
 	{
 		global $smarty, $sql;
 		
-		$options['preferences']['thousands_seperator'] = $_POST['thousands_seperator']{0};
-		$options['preferences']['decimal_symbol'] = $_POST['decimal_symbol']{0};
+		$options['preferences']['thousands_seperator'] = $_POST['thousands_seperator'][0];
+		$options['preferences']['decimal_symbol'] = $_POST['decimal_symbol'][0];
 		$options['preferences']['timezone'] = (float)$_POST['timezone'];
 		$options['preferences']['timestamp_format'] = substr($_POST['timestamp_format'], 0, 25);
 		

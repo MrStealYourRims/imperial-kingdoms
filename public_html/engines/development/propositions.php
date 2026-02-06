@@ -35,11 +35,16 @@
 		var $sql;
 		
 		var $proposition_id;
-		var $proposition;
-		var $statement;
-		
-		function Propositions()
-		{
+	var $proposition;
+	var $statement;
+
+	function __construct()
+	{
+		$this->Propositions();
+	}
+
+	function Propositions()
+	{
 			global $data, $smarty;
 			
 			$this->data = &$data;

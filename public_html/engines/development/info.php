@@ -21,11 +21,16 @@
 	class Info
 	{
 		var $data;
-		var $smarty;
-		var $sql;
-		
-		function Info(&$data, &$smarty)
-		{
+	var $smarty;
+	var $sql;
+
+	function __construct(&$data, &$smarty)
+	{
+		$this->Info($data, $smarty);
+	}
+
+	function Info(&$data, &$smarty)
+	{
 			$this->data = &$data;
 			$this->smarty = &$smarty;
 			$this->sql = new SQL_Generator;

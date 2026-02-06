@@ -26,11 +26,16 @@
 		var $smarty;
 		var $sql;
 		
-		var $planet_id;
-		var $concept_id;
-		
-		function Designs(&$data, &$smarty)
-		{
+	var $planet_id;
+	var $concept_id;
+
+	function __construct(&$data, &$smarty)
+	{
+		$this->Designs($data, $smarty);
+	}
+
+	function Designs(&$data, &$smarty)
+	{
 			$this->data = &$data;
 			$this->smarty = &$smarty;
 			$this->sql = new SQL_Generator;

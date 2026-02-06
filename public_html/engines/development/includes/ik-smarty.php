@@ -1,5 +1,9 @@
 <?php
 	class IK_Smarty {
+		function __construct() {
+			$this->IK_Smarty();
+		}
+
 		function IK_Smarty() {
 			data::initialize();
 		}

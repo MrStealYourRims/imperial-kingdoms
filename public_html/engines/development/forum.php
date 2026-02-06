@@ -24,12 +24,17 @@
 	{
 		var $data;
 		var $smarty;
-		var $sql;
-		
-		var $mark_display = true;
-		
-		function Forum(&$data, &$smarty)
-		{
+	var $sql;
+
+	var $mark_display = true;
+
+	function __construct(&$data, &$smarty)
+	{
+		$this->Forum($data, $smarty);
+	}
+
+	function Forum(&$data, &$smarty)
+	{
 			$this->data = &$data;
 			$this->smarty = &$smarty;
 			$this->sql = new SQL_Generator;

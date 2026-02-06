@@ -8,6 +8,7 @@
 	
 	require_once(dirname(__FILE__) . '/constants.php');
 	require_once(dirname(__FILE__) . '/functions.php');
+	require_once(dirname(dirname(dirname(dirname(__FILE__)))) . '/includes/mysql_compat.php');
 	
 	// Class Requirement(s)
 //	require(SMARTY_DIR . 'Smarty.class.php');
@@ -43,10 +44,15 @@
 	fix_magic_quotes();
 	
 	
-	class ImperialKingdoms_Initialization
+class ImperialKingdoms_Initialization
+{
+	function __construct()
 	{
-		function ImperialKingdoms_Initialization()
-		{
+		$this->ImperialKingdoms_Initialization();
+	}
+
+	function ImperialKingdoms_Initialization()
+	{
 			$this->database();
 			$this->style();
 			$this->session();
@@ -224,8 +230,8 @@
 	
 	if (!empty($_SESSION['player_id'])) {
 		require_once(dirname(__FILE__) . '/updater_round.php');
-		$updater = &new Updater_Round();
-		$data->updater = &$updater;
+		$updater = new Updater_Round();
+		$data->updater = $updater;
 		
 		require_once(dirname(__FILE__) . '/alerts.php');
 		$alerts = new alerts;

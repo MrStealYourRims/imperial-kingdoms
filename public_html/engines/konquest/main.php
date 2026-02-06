@@ -68,12 +68,17 @@
 	
 	class Core
 	{
-		var $data;
-		var $smarty;
-		var $sql;
-		
-		function Core($data, $smarty)
-		{
+	var $data;
+	var $smarty;
+	var $sql;
+
+	function __construct($data, $smarty)
+	{
+		$this->Core($data, $smarty);
+	}
+
+	function Core($data, $smarty)
+	{
 			$this->data = &$data;
 			$this->smarty = &$smarty;
 			$this->sql = new SQL_Generator;
@@ -243,7 +248,12 @@
 		var $data;
 		var $smarty;
 		var $sql;
-		
+
+		function __construct($data, $smarty)
+		{
+			$this->Planet($data, $smarty);
+		}
+
 		function Planet($data, $smarty)
 		{
 			$this->data = &$data;
@@ -355,7 +365,12 @@
 		var $data;
 		var $smarty;
 		var $sql;
-		
+
+		function __construct($data, $smarty)
+		{
+			$this->Interface($data, $smarty);
+		}
+
 		function Interface($data, $smarty)
 		{
 			$this->data = &$data;

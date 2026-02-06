@@ -4,7 +4,7 @@
 // | PEAR :: Image :: GraphViz												 |
 // +---------------------------------------------------------------------------+
 // | Copyright (c) 2002-2005 Sebastian Bergmann <sb@sebastian-bergmann.de> and |
-// |						 Dr. Volker Göbbels <vmg@arachnion.de>.			|
+// |						 Dr. Volker GÃ¶bbels <vmg@arachnion.de>.			|
 // +---------------------------------------------------------------------------+
 // | This source file is subject to version 3.00 of the PHP License,		   |
 // | that is available at http://www.php.net/license/3_0.txt.				  |
@@ -78,9 +78,9 @@ require_once 'System.php';
  * </code>
  *
  * @author	Sebastian Bergmann <sb@sebastian-bergmann.de>
- * @author	Dr. Volker Göbbels <vmg@arachnion.de>
+ * @author	Dr. Volker GÃ¶bbels <vmg@arachnion.de>
  * @author	Karsten Dambekalns <k.dambekalns@fishfarm.de>
- * @copyright Copyright &copy; 2002-2005 Sebastian Bergmann <sb@sebastian-bergmann.de> and Dr. Volker Göbbels <vmg@arachnion.de>
+ * @copyright Copyright &copy; 2002-2005 Sebastian Bergmann <sb@sebastian-bergmann.de> and Dr. Volker GÃ¶bbels <vmg@arachnion.de>
  * @license   http://www.php.net/license/3_0.txt The PHP License, Version 3.0
  * @category  Image
  * @package   Image_GraphViz
@@ -118,6 +118,10 @@ class Image_GraphViz {
 	* @param  string  $name Name of the Graph
 	* @access public
 	*/
+	function __construct($directed = TRUE, $attributes = array(), $name = NULL) {
+		$this->Image_GraphViz($directed, $attributes, $name);
+	}
+
 	function Image_GraphViz($directed = TRUE, $attributes = array(), $name = NULL) {
 		$this->setDirected($directed);
 		$this->setAttributes($attributes);

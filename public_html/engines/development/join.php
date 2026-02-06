@@ -31,11 +31,16 @@
 		var $planet;
 		var $planets;
 		
-		var $starsystem_id;
-		var $npc;
-		
-		function Join(&$data, &$smarty, $npc = false)
-		{
+	var $starsystem_id;
+	var $npc;
+
+	function __construct(&$data, &$smarty, $npc = false)
+	{
+		$this->Join($data, $smarty, $npc);
+	}
+
+	function Join(&$data, &$smarty, $npc = false)
+	{
 			$this->data = &$data;
 			$this->smarty = &$smarty;
 			$this->sql = new SQL_Generator;

@@ -6,11 +6,16 @@
 		
 		var $sql;
 		
-		var $serialized = array();
-		var $roundindependent = array();
-		
-		function Data_Abstraction_Layer()
-		{
+	var $serialized = array();
+	var $roundindependent = array();
+
+	function __construct()
+	{
+		$this->Data_Abstraction_Layer();
+	}
+
+	function Data_Abstraction_Layer()
+	{
 			$this->sql = new SQL_Generator;
 		}
 		

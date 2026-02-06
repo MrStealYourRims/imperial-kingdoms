@@ -9,6 +9,7 @@
 	
 	require_once(dirname(__FILE__) . '/constants.php');
 	require_once(dirname(__FILE__) . '/functions.php');
+	require_once(dirname(dirname(dirname(dirname(__FILE__)))) . '/includes/mysql_compat.php');
 	
 	
 	// ###############################################
